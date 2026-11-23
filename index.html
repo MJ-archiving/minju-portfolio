@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>김민주 | Portfolio</title>
+<meta name="description" content="가톨릭대학교 경영학과 김민주의 포트폴리오 — NAVER WEBTOON 지원">
+<meta name="theme-color" content="#0B1F5C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="김민주 | Portfolio">
+<meta property="og:description" content="가톨릭대학교 경영학과 김민주의 포트폴리오 — NAVER WEBTOON 지원">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230B1F5C'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='800' font-size='28' text-anchor='middle' fill='white'%3EMJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  수정 방법 (Claude Code에서 "○○ 내용을 이렇게 바꿔줘"라고 요청)  ║
+  ╠══════════════════════════════════════════════════════════════╣
+  ║  1. 파일 아래쪽 "portfolio-data" 블록의 PORTFOLIO 객체만         ║
+  ║     고치면 화면 전체가 바뀝니다. (HTML/CSS는 건드릴 필요 없음)    ║
+  ║  2. 글자가 "TODO:" 로 시작하면 화면에 점선 박스(✎ 작성 예정)로   ║
+  ║     표시됩니다. 실제 내용으로 바꾸면 점선이 사라집니다.          ║
+  ║  3. 프로젝트의 draft: true 를 지우면 "초안" 배지가 사라집니다.    ║
+  ║  4. 프로젝트/활동을 늘리려면 배열에 { ... } 한 덩어리를 복사해    ║
+  ║     붙여 넣으면 됩니다.                                          ║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
+
+<style>
+/* ───────── Design tokens (레퍼런스 3: 컬러 팔레트 / 레퍼런스 1: 네이비 + 블루) ───────── */
+:root{
+  --navy:#0B1F5C;
+  --navy-2:#2C3D8F;
+  --blue:#1F4FE0;
+  --primary:#5A81FA;
+  --sky:#CDDEFF;
+  --mist:#F2F5FF;
+  --paper:#F8F9FD;
+  --ink:#1F1F1F;
+  --gray:#6A6F83;
+  --gray-2:#A8B1CE;
+  --line:#E3E8F6;
+  --white:#fff;
+  --font:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;
+  --font-en:'Poppins','Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --shadow:0 12px 32px rgba(44,61,143,.10);
+  --header-h:64px;
+  --wrap:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:calc(var(--header-h) + 8px);scrollbar-gutter:stable;-webkit-text-size-adjust:100%}
+html.modal-open{overflow:hidden}
+body{margin:0;font-family:var(--font);color:var(--ink);background:#fff;line-height:1.7;word-break:keep-all;overflow-wrap:break-word}
+h1,h2,h3,h4,p,ul,ol,dl,dd{margin:0}
+ul,ol{padding:0;list-style:none}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--primary);outline-offset:2px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--navy);color:#fff;padding:10px 16px;border-radius:8px}
+.skip:focus{top:12px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+
+/* 작성 예정(TODO) 표시 */
+.todo{display:inline-block;padding:0 .55em;border:1px dashed var(--gray-2);border-radius:6px;background:rgba(168,177,206,.14);color:var(--gray);font-weight:400;font-style:normal;line-height:1.55}
+.todo::before{content:"✎ "}
+.on-dark .todo{border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.12);color:#fff}
+.on-light .todo{border-color:var(--gray-2);background:rgba(168,177,206,.14);color:var(--gray)}
+
+/* ───────── Header / Menu ───────── */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header-in{max-width:var(--wrap);margin:0 auto;height:var(--header-h);padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-en);font-weight:800;font-size:18px;letter-spacing:.03em;color:var(--blue);text-decoration:none}
+.logo span{color:var(--navy)}
+.nav ul{display:flex;gap:4px}
+.nav a{display:block;padding:8px 16px;border-radius:999px;color:var(--gray);font-weight:500;font-size:15px;text-decoration:none}
+.nav a:hover{color:var(--blue);background:var(--mist)}
+.nav a[aria-current="true"]{background:var(--blue);color:#fff}
+.menu-btn{display:none;width:44px;height:44px;border:0;background:transparent;border-radius:12px;align-items:center;justify-content:center;flex-direction:column;gap:5px;padding:0}
+.menu-btn:hover{background:var(--mist)}
+.menu-btn i{display:block;width:22px;height:2px;border-radius:2px;background:var(--navy)}
+.menu-btn[aria-expanded="true"] i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] i:nth-child(2){display:none}
+.menu-btn[aria-expanded="true"] i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ───────── Hero (레퍼런스 1: 네이비 표지 + 항공권) ───────── */
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.hero-in{max-width:var(--wrap);margin:0 auto;padding:36px 24px 96px}
+.hero-top{display:flex;justify-content:space-between;align-items:center;font-family:var(--font-en);font-size:13px;font-weight:500;letter-spacing:.18em;color:#B9C7F5;text-transform:uppercase}
+.globe{width:44px;height:44px;color:#fff}
+.wm{position:relative;max-width:900px;margin:56px auto 36px;padding:72px 0 40px}
+.flight{position:absolute;inset:0;width:100%;height:100%}
+.flight path{fill:none;stroke:#fff;stroke-width:2;stroke-dasharray:7 8;vector-effect:non-scaling-stroke;opacity:.85}
+.plane-end{position:absolute;left:87%;top:17%;width:clamp(30px,4.5vw,52px);height:clamp(30px,4.5vw,52px);color:#fff;transform:translate(-50%,-50%) rotate(45deg)}
+.wordmark{position:relative;display:flex;justify-content:center;align-items:center;font-family:var(--font-en);font-weight:800;font-size:clamp(50px,14.5vw,156px);line-height:1;letter-spacing:-.04em;color:#fff}
+.wordmark .w{display:inline-block}
+.w1{font-size:1.12em;transform:rotate(-6deg)}
+.w-star{width:.78em;height:.78em;margin:0 .02em}
+.w-star svg{width:100%;height:100%}
+.w3{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-weight:400;transform:rotate(6deg)}
+.w4{transform:rotate(-5deg)}
+.w5{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-weight:400;font-size:1.32em;transform:rotate(-8deg);margin:0 .02em 0 -.04em}
+.w6{font-size:.95em;transform:rotate(8deg)}
+.w7{font-weight:300;font-size:1.2em}
+.w8{color:var(--primary);font-size:.92em;transform:rotate(-4deg)}
+.w9{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-weight:400;font-size:.92em;transform:rotate(-10deg)}
+.hero-copy{text-align:center;margin-bottom:56px}
+.hero-hello{font-size:clamp(20px,3vw,28px);font-weight:600;line-height:1.4}
+.hero-hello b{color:#9DB8FF}
+.hero-tag{margin-top:10px;color:#C7D3F7;font-size:clamp(15px,2vw,18px)}
+
+/* 항공권(티켓) 컴포넌트 */
+.ticket{--notch:var(--navy);display:grid;grid-template-columns:240px 1fr;max-width:980px;margin:0 auto;background:#fff;color:var(--ink);border-radius:28px;position:relative}
+.ticket-stub{position:relative;background:var(--blue);color:#fff;border-radius:28px 0 0 28px;padding:28px 26px;display:flex;flex-direction:column;justify-content:space-between;gap:22px;min-height:260px}
+.ticket-stub::before,.ticket-stub::after{content:"";position:absolute;right:-14px;width:28px;height:28px;border-radius:50%;background:var(--notch);z-index:2}
+.ticket-stub::before{top:-14px}
+.ticket-stub::after{bottom:-14px}
+.stub-label{font-family:var(--font-en);font-size:12px;font-weight:600;letter-spacing:.2em;opacity:.85}
+.stub-name{font-family:var(--font-en);font-weight:800;font-size:26px;line-height:1.15;letter-spacing:.01em;margin-top:6px}
+.stub-plane{width:34px;height:34px;transform:rotate(45deg)}
+.barcode{width:100%;height:46px;color:currentColor}
+.ticket-main{padding:30px 36px 32px;border-left:2px dashed var(--sky);min-width:0}
+.ticket-head{display:flex;align-items:center;justify-content:space-between;gap:16px;color:var(--blue)}
+.ticket-head .plane{width:30px;height:30px;transform:rotate(45deg)}
+.ticket-head strong{font-family:var(--font-en);font-weight:700;font-size:17px;letter-spacing:.04em;color:var(--blue)}
+.route{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;margin-top:22px}
+.route dt{font-family:var(--font-en);font-size:12px;font-weight:600;letter-spacing:.16em;color:var(--blue)}
+.route dd{font-size:clamp(17px,2.2vw,22px);font-weight:700;color:var(--navy);line-height:1.35;margin-top:2px}
+.route dd small{display:block;font-size:14px;font-weight:500;color:var(--gray)}
+.route-arrow{color:var(--gray-2);width:28px;height:28px}
+.chips-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:999px;background:var(--mist);color:var(--navy-2);font-size:14px;font-weight:600}
+.chip em{font-style:normal;font-family:var(--font-en);font-size:11px;letter-spacing:.12em;color:var(--primary)}
+.toc{margin-top:24px;border-top:1px solid var(--line)}
+.toc a{display:flex;align-items:baseline;gap:14px;padding:11px 4px;border-bottom:1px dotted var(--gray-2);text-decoration:none;color:var(--navy)}
+.toc a:hover{background:var(--mist)}
+.toc .no{font-family:var(--font-en);font-weight:700;font-size:13px;color:var(--blue);min-width:22px}
+.toc .lb{font-weight:600}
+.toc .en{margin-left:auto;font-family:var(--font-en);font-size:13px;color:var(--gray)}
+
+/* ───────── Sections ───────── */
+.sec{padding:104px 0}
+.sec-paper{background:var(--paper)}
+.sec-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:56px}
+.eyebrow{font-family:var(--font-en);font-size:14px;font-weight:700;letter-spacing:.1em;color:var(--gray);text-transform:uppercase}
+.sec h2{font-size:clamp(30px,4vw,42px);line-height:1.25;color:var(--navy);margin-top:6px;font-weight:800}
+.lens{width:48px;height:34px;color:var(--gray-2);flex:none;margin-top:6px}
+.sub{font-family:var(--font-en);font-size:14px;font-weight:700;letter-spacing:.08em;color:var(--blue);text-transform:uppercase;margin-bottom:14px}
+
+/* About */
+.about{display:grid;grid-template-columns:clamp(200px,20vw,260px) minmax(0,1fr) clamp(270px,28vw,340px);grid-template-areas:"profile text scene";gap:40px;align-items:start}
+.profile-wrap{grid-area:profile}
+.about-text{grid-area:text;min-width:0}
+.profile-img{aspect-ratio:1/1;border-radius:24px;background:var(--blue);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.profile-img img{width:100%;height:100%;object-fit:cover}
+.info{display:grid;gap:10px}
+.has-photo .info{margin-top:28px}
+.info div{display:grid;grid-template-columns:minmax(0,1fr);gap:0;font-size:15px}
+.info dt{font-family:var(--font-en);font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--blue)}
+.info dd{font-weight:500;overflow-wrap:anywhere}
+.quote{font-size:clamp(22px,3vw,30px);font-weight:700;line-height:1.45;color:var(--navy);margin-bottom:28px}
+.quote::before{content:"“";color:var(--primary);margin-right:4px}
+.quote::after{content:"”";color:var(--primary);margin-left:2px}
+.about-text p{font-size:17px;color:#33384A}
+.about-text p + p{margin-top:16px}
+.about-text p.sub,.about-text p.quote{color:inherit}
+.about-text p.sub{color:var(--blue);font-size:14px}
+.about-text p.quote{color:var(--navy);font-size:clamp(20px,2.4vw,28px)}
+.keywords{margin-top:44px}
+
+/* 데이터 작업실 일러스트 (소개 옆) */
+/* .scene 카드: overflow:hidden 으로 그림이 움직여도 화면 밖으로 넘치지 않게 합니다.
+   위쪽 여백(36px)은 스크롤·떠오름·마우스 이동으로 그림이 위로 올라갈 공간입니다. */
+.scene{grid-area:scene;margin:0;min-width:0;overflow:hidden;background:radial-gradient(circle at 50% 38%,#fff 0,var(--mist) 72%);border-radius:28px;padding:36px 18px 22px}
+/* .scene-motion: 움직이는 요소 (JS가 transform 을 바꿉니다: 떠오름 + 마우스 + 스크롤) */
+.scene-motion{display:block;transform-origin:50% 70%;will-change:transform}
+.scene-img{display:block;width:100%;height:auto;filter:drop-shadow(0 12px 16px rgba(44,61,143,.18))}
+.scene-tools{display:flex;justify-content:flex-end;margin-top:14px}
+.motion-toggle{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--primary);background:#fff;color:var(--blue);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:700;min-height:36px}
+.motion-toggle:hover{background:var(--mist)}
+.scene-credit{margin-top:14px;font-size:12px;color:var(--gray)}
+.scene figcaption{padding:14px 8px 0}
+.scene figcaption .sub{margin-bottom:4px}
+.scene-title{font-size:18px;font-weight:700;color:var(--navy);line-height:1.4}
+.scene-cap{margin-top:4px;font-size:14px;color:var(--gray);line-height:1.6}
+.scene-points{margin-top:16px;display:grid;gap:12px}
+.scene-points li{display:grid;grid-template-columns:12px 1fr;gap:10px;font-size:13.5px;line-height:1.55;color:#3B4156}
+.scene-points li::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--c,#A8B1CE);border:2px solid #3B2F33;margin-top:4px}
+.scene-points strong{display:block;color:var(--navy);font-size:14px}
+.pills{display:flex;flex-wrap:wrap;gap:12px}
+.pill{padding:8px 22px;border-radius:999px;border:1.5px solid var(--primary);color:var(--blue);font-family:var(--font-en);font-weight:500;font-size:15px;background:#fff}
+
+/* Projects */
+.projects{--notch:var(--paper);display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.card{position:relative;background:#fff;border-radius:24px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+.card:hover{box-shadow:0 14px 36px rgba(31,79,224,.22)}
+.card-art{position:relative;padding:22px 24px 26px;min-height:190px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;background:var(--blue)}
+.card-art::before,.card-art::after{content:"";position:absolute;bottom:-12px;width:24px;height:24px;border-radius:50%;background:var(--notch);z-index:2}
+.card-art::before{left:-12px}
+.card-art::after{right:-12px}
+.t-blue{background:var(--blue);color:#fff}
+.t-navy{background:var(--navy);color:#fff}
+.t-sky{background:var(--sky);color:var(--navy)}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.card-no{font-family:var(--font-en);font-weight:800;font-size:54px;line-height:1;letter-spacing:-.02em}
+.card-cat{font-size:13px;font-weight:600;letter-spacing:.02em;opacity:.92;text-align:right}
+.card-art .barcode{width:120px;height:26px;opacity:.85}
+.card-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-top:20px}
+.card-art .plane{width:26px;height:26px;transform:rotate(45deg)}
+.card-body{padding:30px 26px 26px;display:flex;flex-direction:column;flex:1}
+.card-body h3{font-size:20px;line-height:1.4;color:var(--navy);font-weight:700}
+.card-body p{margin-top:10px;font-size:15px;color:var(--gray)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 22px}
+.tags li{font-size:13px;color:var(--navy-2);background:var(--mist);padding:3px 12px;border-radius:999px;font-weight:500}
+.card-btn{margin-top:auto;align-self:flex-start;padding:0;border:0;background:transparent;color:var(--blue);font-weight:700;font-size:15px}
+.card-btn::after{content:"";position:absolute;inset:0}
+.card-btn:hover{text-decoration:underline}
+.badge-draft{display:inline-block;font-family:var(--font-en);font-size:11px;font-weight:600;letter-spacing:.1em;padding:2px 10px;border-radius:999px;border:1px solid currentColor;opacity:.9;align-self:flex-start;line-height:1.6}
+.card-body .badge-draft{color:var(--gray);margin-bottom:10px;border-color:var(--gray-2)}
+
+/* Skills (레퍼런스 3: 컴포넌트 카드) */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.skill{background:var(--mist);border-radius:24px;padding:32px}
+.skill-ic{width:48px;height:48px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center}
+.skill-ic svg{width:24px;height:24px}
+.skill h3{font-size:20px;color:var(--navy);margin-top:20px;font-weight:700}
+.skill p{margin-top:8px;color:var(--gray);font-size:15px}
+.skill .pills{margin-top:20px;gap:8px}
+.skill .pill{padding:4px 16px;font-size:14px;font-family:var(--font)}
+.tools{margin-top:48px}
+.tools .pill{padding:6px 20px;font-size:14px}
+
+/* Activity (레퍼런스 1: Resume 영역) */
+.rec{display:grid;grid-template-columns:1.55fr 1fr;gap:64px;align-items:start}
+.exp-list{display:grid;gap:14px}
+.exp{background:#fff;border-radius:20px;box-shadow:var(--shadow)}
+.exp summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:116px 1fr 28px;gap:16px;align-items:center;padding:22px 26px;border-radius:20px}
+.exp summary::-webkit-details-marker{display:none}
+.exp summary::after{content:"+";font-family:var(--font-en);font-size:24px;font-weight:500;color:var(--blue);text-align:center;line-height:1}
+.exp[open] summary::after{content:"–"}
+.exp summary:hover{background:var(--mist)}
+.exp-period{font-family:var(--font-en);font-weight:700;font-size:14px;color:var(--navy)}
+.exp-type{display:inline-block;font-size:12px;font-weight:700;color:var(--blue);background:var(--mist);padding:1px 10px;border-radius:999px;margin-right:8px;vertical-align:2px}
+.exp-title{font-weight:700;font-size:17px;color:var(--navy)}
+.exp-org{display:block;font-size:14px;color:var(--gray)}
+.exp-body{padding:2px 26px 26px 158px}
+.exp-body p{font-size:15px;color:#3B4156}
+.exp-body ul{margin-top:12px;display:grid;gap:6px}
+.exp-body li{font-size:15px;color:#3B4156;padding-left:16px;position:relative}
+.exp-body li::before{content:"";position:absolute;left:0;top:.78em;width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.link-btn{margin-top:18px;display:inline-flex;align-items:center;gap:6px;border:0;background:transparent;padding:0;color:var(--blue);font-weight:700;font-size:15px}
+.link-btn:hover{text-decoration:underline}
+.exp-placeholder{border:2px dashed var(--gray-2);border-radius:20px;padding:22px 26px;color:var(--gray);display:grid;grid-template-columns:116px 1fr;gap:16px;align-items:center;font-size:15px}
+.side-block + .side-block{margin-top:44px}
+.rows li{display:grid;grid-template-columns:112px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.rows .d{font-family:var(--font-en);font-weight:700;font-size:13px;color:var(--navy);padding-top:2px}
+.rows strong{display:block;color:var(--navy);font-weight:700}
+.rows span.o{color:var(--gray);font-size:14px}
+
+/* Contact */
+.sec-navy{background:var(--navy);color:#fff;padding-bottom:0}
+.sec-navy h2{color:#fff}
+.sec-navy .eyebrow{color:#9DB0EE}
+.sec-navy .lens{color:#6F85CF}
+.contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:center}
+.contact-big{font-family:var(--font-en);font-weight:800;font-size:clamp(44px,8vw,92px);line-height:1;letter-spacing:-.03em;color:var(--primary);margin-bottom:24px}
+.contact-copy p.lead{font-size:18px;color:#D3DDFA}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:999px;font-weight:700;font-size:16px;border:2px solid var(--blue);background:var(--blue);color:#fff;text-decoration:none;min-height:50px}
+.btn:hover{background:var(--navy-2);border-color:var(--navy-2)}
+.on-dark .btn{background:#fff;border-color:#fff;color:var(--navy)}
+.on-dark .btn:hover{background:var(--sky);border-color:var(--sky)}
+.on-dark .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.65)}
+.on-dark .btn.ghost:hover{background:rgba(255,255,255,.12)}
+.ticket.contact-ticket{grid-template-columns:1fr;max-width:none;margin:0}
+.contact-ticket .ticket-main{border-left:0;padding:32px 36px}
+.contact-list{margin-top:24px;border-top:1px solid var(--line)}
+.contact-list div{display:grid;grid-template-columns:84px 1fr;gap:12px;padding:14px 0;border-bottom:1px dotted var(--gray-2);align-items:baseline}
+.contact-list dt{font-family:var(--font-en);font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--blue)}
+.contact-list dd{font-weight:600;color:var(--navy);overflow-wrap:anywhere}
+.contact-list a{color:var(--navy)}
+.contact-list a:hover{color:var(--blue)}
+.contact-ticket .barcode{height:42px;margin-top:26px;color:var(--blue)}
+.copy-status{min-height:1.6em;margin-top:12px;font-size:14px;color:#9DB8FF}
+.footer{margin-top:88px;padding:26px 0 34px;border-top:1px solid rgba(255,255,255,.18);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:#9DB0EE;font-family:var(--font-en)}
+
+/* ───────── Detail dialog (레퍼런스 2: 케이스 스터디) ───────── */
+dialog.detail{border:0;padding:0;margin:auto;width:min(1000px,calc(100% - 48px));max-width:none;max-height:calc(100vh - 48px);max-height:calc(100dvh - 48px);border-radius:28px;background:#fff;color:var(--ink);overflow:auto;overscroll-behavior:contain}
+dialog.detail::backdrop{background:rgba(11,31,92,.74)}
+.d-bar{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 16px 12px 28px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+.d-count{font-family:var(--font-en);font-size:13px;font-weight:600;letter-spacing:.14em;color:var(--gray)}
+.d-close{display:inline-flex;align-items:center;gap:6px;border:0;background:var(--mist);color:var(--navy);border-radius:999px;padding:9px 18px;font-weight:700;font-size:14px;min-height:42px}
+.d-close:hover{background:var(--sky)}
+.d-hero{--line2:rgba(255,255,255,.45);position:relative;padding:44px 40px 38px;background:var(--blue);color:#fff}
+.d-hero.t-navy{background:var(--navy)}
+.d-hero.t-sky{background:var(--sky);color:var(--navy);--line2:rgba(11,31,92,.35)}
+.d-hero .cat{font-size:14px;font-weight:700;letter-spacing:.04em;opacity:.92;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.d-hero h2{color:inherit;font-size:clamp(26px,4.2vw,42px);line-height:1.28;margin:14px 0 14px;font-weight:800}
+.d-hero .lead{font-size:clamp(16px,2vw,19px);opacity:.94;max-width:720px}
+.d-hero .big-no{position:absolute;right:32px;top:22px;font-family:var(--font-en);font-weight:800;font-size:clamp(60px,12vw,140px);line-height:1;opacity:.14}
+.d-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:32px;padding-top:22px;border-top:1px dashed var(--line2)}
+.d-meta dt{font-size:12px;font-weight:700;letter-spacing:.08em;opacity:.75}
+.d-meta dd{margin-top:2px;font-weight:600;font-size:15px;overflow-wrap:anywhere}
+.d-body{padding:12px 40px 36px}
+.d-sec{padding:36px 0;border-bottom:1px solid var(--line)}
+.d-sec:last-of-type{border-bottom:0}
+.d-sec .eyebrow{color:var(--blue)}
+.d-sec h3{font-size:clamp(21px,2.6vw,27px);line-height:1.35;color:var(--navy);margin:4px 0 16px;font-weight:800}
+.d-sec p.txt{font-size:17px;color:#33384A}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pcard{background:var(--mist);border-radius:20px;padding:22px 22px 24px;font-size:15px;color:#33384A}
+.pcard .n{display:block;font-family:var(--font-en);font-weight:800;font-size:22px;color:var(--blue);margin-bottom:6px}
+.steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.steps::before{content:"";position:absolute;top:21px;left:22px;right:22px;border-top:2px dashed var(--sky)}
+.steps li{position:relative}
+.steps .c{position:relative;width:44px;height:44px;border-radius:50%;background:var(--blue);color:#fff;font-family:var(--font-en);font-weight:700;display:flex;align-items:center;justify-content:center}
+.steps h4{margin-top:14px;font-size:17px;color:var(--navy);font-weight:700}
+.steps p{margin-top:6px;font-size:14.5px;color:var(--gray)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.stat{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:24px}
+.stat b{display:block;font-family:var(--font-en);font-weight:800;font-size:clamp(22px,3vw,32px);line-height:1.3;color:var(--blue)}
+.stat span.l{display:block;margin-top:6px;font-size:14px;color:var(--gray)}
+.learned{border-left:4px solid var(--blue);background:var(--mist);border-radius:0 20px 20px 0;padding:22px 26px;font-size:17px;color:var(--navy);font-weight:500}
+.d-links{display:flex;flex-wrap:wrap;gap:10px}
+.d-nav{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:24px 40px 40px;background:var(--paper);border-top:1px solid var(--line)}
+.d-nav button{display:block;text-align:left;border:1px solid var(--line);background:#fff;border-radius:18px;padding:16px 20px}
+.d-nav button:hover{border-color:var(--primary);background:var(--mist)}
+.d-nav button.next{text-align:right}
+.d-nav small{display:block;font-family:var(--font-en);font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--blue)}
+.d-nav strong{display:block;margin-top:2px;color:var(--navy);font-size:15px;line-height:1.4}
+
+/* ───────── Responsive ───────── */
+@media (max-width:1000px){
+  .projects{grid-template-columns:1fr 1fr}
+  .about{grid-template-columns:240px minmax(0,1fr);grid-template-areas:"profile text" "profile scene";gap:40px}
+  .rec{grid-template-columns:1fr;gap:56px}
+  .contact-grid{grid-template-columns:1fr;gap:48px}
+  .d-meta{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .steps::before{display:none}
+}
+@media (max-width:860px){
+  .menu-btn{display:inline-flex}
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);padding:10px 16px 20px;box-shadow:0 18px 30px rgba(11,31,92,.12)}
+  .nav.open{display:block}
+  .nav ul{flex-direction:column;gap:2px}
+  .nav a{padding:14px 16px;font-size:17px;border-radius:14px}
+  .ticket{grid-template-columns:1fr}
+  .ticket-stub{border-radius:28px 28px 0 0;min-height:0;flex-direction:row;align-items:center;flex-wrap:wrap;padding:22px 26px}
+  .ticket-stub::before,.ticket-stub::after{right:auto;top:auto;bottom:-14px}
+  .ticket-stub::before{left:-14px}
+  .ticket-stub::after{right:-14px}
+  .ticket-stub .barcode{width:140px;height:36px;margin-left:auto}
+  .ticket-main{border-left:0;border-top:2px dashed var(--sky);padding:28px 24px}
+}
+@media (max-width:720px){
+  .sec{padding:72px 0}
+  .sec-head{margin-bottom:36px}
+  .wrap,.header-in,.hero-in{padding-left:20px;padding-right:20px}
+  .hero-in{padding-top:24px;padding-bottom:64px}
+  .wm{margin:36px auto 24px;padding:56px 0 28px}
+  .about{grid-template-columns:minmax(0,1fr);grid-template-areas:"profile" "text" "scene";gap:36px}
+  .scene{width:100%;max-width:520px;justify-self:center}
+  .profile-wrap.has-photo{display:grid;grid-template-columns:140px 1fr;gap:20px;align-items:center}
+  .profile-img{border-radius:20px}
+  .has-photo .info{margin-top:0}
+  .scene{padding:30px 14px 20px}
+  .projects{grid-template-columns:1fr}
+  .skills{grid-template-columns:1fr}
+  .skill{padding:26px}
+  .exp summary{grid-template-columns:1fr 28px;gap:6px 12px;padding:18px 20px}
+  .exp-period{grid-column:1/-1}
+  .exp-body{padding:0 20px 22px}
+  .exp-placeholder{grid-template-columns:1fr;gap:4px;padding:18px 20px}
+  .rows li{grid-template-columns:96px 1fr}
+  .route{grid-template-columns:1fr;gap:4px}
+  .route-arrow{transform:rotate(90deg);margin:2px 0}
+  .contact-ticket .ticket-main{padding:26px 22px}
+  .contact-list div{grid-template-columns:70px 1fr}
+  .footer{margin-top:64px}
+  /* 상세 보기: 모바일은 전체 화면 */
+  dialog.detail{width:100%;height:100%;max-height:100%;border-radius:0}
+  .d-bar{padding-left:20px}
+  .d-hero{padding:32px 20px 28px}
+  .d-hero .big-no{right:16px;top:12px}
+  .d-body{padding:4px 20px 28px}
+  .d-sec{padding:28px 0}
+  .cards3,.stats{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr;gap:22px}
+  .steps::before{display:block;top:22px;bottom:22px;left:21px;right:auto;border-top:0;border-left:2px dashed var(--sky)}
+  .steps li{display:grid;grid-template-columns:44px 1fr;gap:0 16px}
+  .steps li .c{grid-row:1/3}
+  .steps h4{margin-top:8px}
+  .d-nav{grid-template-columns:1fr;padding:20px 20px 32px}
+  .d-nav button.next{text-align:left}
+}
+@media (max-width:420px){
+  .profile-wrap.has-photo{grid-template-columns:1fr}
+  .profile-img{max-width:200px}
+  .d-meta{grid-template-columns:1fr 1fr;gap:14px}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#about">본문 바로가기</a>
+
+<!-- 아이콘 모음 (화면에는 보이지 않음) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-plane" viewBox="0 0 24 24"><path fill="currentColor" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-lens" viewBox="0 0 48 34"><rect x="1" y="3" width="46" height="30" rx="8" fill="currentColor"/><rect x="1" y="14" width="46" height="5" fill="#fff"/><circle cx="24" cy="17" r="8" fill="currentColor" stroke="#fff" stroke-width="3"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="24" cy="24" r="20"/><ellipse cx="24" cy="24" rx="9" ry="20"/><path d="M4 24h40M7 14h34M7 34h34"/></g></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 20V11M12 20V4M19 20v-6M3 20h18"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h5"/></symbol>
+  <symbol id="i-megaphone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 10v4a1 1 0 0 0 1 1h2l7 4V5L6 9H4a1 1 0 0 0-1 1zM17 9a4 4 0 0 1 0 6"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.6"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15.5 14.4c3 0 5.5 1.7 5.5 5.2"/></g></symbol>
+</svg>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="logo" href="#top" aria-label="맨 위로"><span data-bind="profile.initials"></span> <span data-bind="profile.nameEn"></span></a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="메뉴 열기"><i></i><i></i><i></i></button>
+    <nav class="nav" id="nav" aria-label="주 메뉴">
+      <ul>
+        <li><a href="#about">소개</a></li>
+        <li><a href="#projects">프로젝트</a></li>
+        <li><a href="#skills">역량</a></li>
+        <li><a href="#activity">활동 기록</a></li>
+        <li><a href="#contact">연락처</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <noscript><p style="padding:40px;text-align:center">이 포트폴리오를 보려면 JavaScript를 켜 주세요.</p></noscript>
+
+  <!-- ───────── HERO ───────── -->
+  <section class="hero on-dark" id="top" aria-labelledby="hero-title">
+    <div class="hero-in">
+      <div class="hero-top">
+        <span id="hero-label"></span>
+        <svg class="globe" aria-hidden="true"><use href="#i-globe"/></svg>
+      </div>
+
+      <h1 class="sr-only" id="hero-title"><span data-bind="profile.nameKo"></span> 포트폴리오</h1>
+      <div class="wm" aria-hidden="true">
+        <svg class="flight" viewBox="0 0 1000 320" preserveAspectRatio="none"><path d="M70 300 C 20 120, 170 30, 470 28 S 800 10, 870 58"/></svg>
+        <svg class="plane-end"><use href="#i-plane"/></svg>
+        <div class="wordmark">
+          <span class="w w1">P</span><span class="w w-star" data-star></span><span class="w w3">r</span><span class="w w4">t</span><span class="w w5">f</span><span class="w w6">o</span><span class="w w7">l</span><span class="w w8">i</span><span class="w w9">o</span>
+        </div>
+      </div>
+
+      <div class="hero-copy" id="hero-copy"></div>
+      <div id="hero-ticket"></div>
+    </div>
+  </section>
+
+  <!-- ───────── 소개 ───────── -->
+  <section class="sec on-light" id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <header class="sec-head">
+        <div><p class="eyebrow">Cover Letter</p><h2 id="about-h">소개</h2></div>
+        <svg class="lens" aria-hidden="true"><use href="#i-lens"/></svg>
+      </header>
+      <div class="about" id="about-body"></div>
+    </div>
+  </section>
+
+  <!-- ───────── 프로젝트 ───────── -->
+  <section class="sec sec-paper on-light" id="projects" aria-labelledby="projects-h">
+    <div class="wrap">
+      <header class="sec-head">
+        <div><p class="eyebrow">Selected Works</p><h2 id="projects-h">프로젝트</h2></div>
+        <svg class="lens" aria-hidden="true"><use href="#i-lens"/></svg>
+      </header>
+      <div class="projects" id="project-list"></div>
+    </div>
+  </section>
+
+  <!-- ───────── 역량 ───────── -->
+  <section class="sec on-light" id="skills" aria-labelledby="skills-h">
+    <div class="wrap">
+      <header class="sec-head">
+        <div><p class="eyebrow">Skills</p><h2 id="skills-h">역량</h2></div>
+        <svg class="lens" aria-hidden="true"><use href="#i-lens"/></svg>
+      </header>
+      <div id="skills-body"></div>
+    </div>
+  </section>
+
+  <!-- ───────── 활동 기록 ───────── -->
+  <section class="sec sec-paper on-light" id="activity" aria-labelledby="activity-h">
+    <div class="wrap">
+      <header class="sec-head">
+        <div><p class="eyebrow">Resume</p><h2 id="activity-h">활동 기록</h2></div>
+        <svg class="lens" aria-hidden="true"><use href="#i-lens"/></svg>
+      </header>
+      <div class="rec" id="activity-body"></div>
+    </div>
+  </section>
+
+  <!-- ───────── 연락처 ───────── -->
+  <section class="sec sec-navy on-dark" id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <header class="sec-head">
+        <div><p class="eyebrow">Contact</p><h2 id="contact-h">연락처</h2></div>
+        <svg class="lens" aria-hidden="true"><use href="#i-lens"/></svg>
+      </header>
+      <div class="contact-grid" id="contact-body"></div>
+      <footer class="footer">
+        <span>© <span id="year"></span> <span data-bind="profile.nameEn"></span></span>
+        <span>Portfolio for <span data-bind="profile.company"></span></span>
+      </footer>
+    </div>
+  </section>
+</main>
+
+<!-- 프로젝트 상세 보기 -->
+<dialog class="detail" id="detail" aria-labelledby="detail-title"></dialog>
+
+<!-- 소개 옆 일러스트: 직접 그린 오리지널 인라인 SVG입니다(외부 이미지·로고·실제 사진 없음, 파일 하나로 완결).
+     다른 그림으로 바꾸려면 <template> 안의 내용을 <img class="scene-img" src="assets/scene.webp" alt="..."> 로 바꾸면 됩니다.
+     화면에서는 소개 섹션의 .scene-motion 요소 안으로 들어갑니다. -->
+<template id="scene-tpl">
+<svg class="scene-img" viewBox="0 0 720 543" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="노트북 앞에서 눈썹을 모으고 집중해 일하는 둥근 흰색 캐릭터 일러스트">
+  <defs>
+    <linearGradient id="sv-body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".62" stop-color="#F7F9FE"/><stop offset="1" stop-color="#DFE7F8"/></linearGradient>
+    <radialGradient id="sv-gloss" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+    <radialGradient id="sv-blush" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FF8FAE" stop-opacity=".85"/><stop offset="1" stop-color="#FF8FAE" stop-opacity="0"/></radialGradient>
+    <linearGradient id="sv-lid" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#DDDFE4"/><stop offset="1" stop-color="#BCC0C8"/></linearGradient>
+    <linearGradient id="sv-deck" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D6D9DF"/><stop offset="1" stop-color="#B4B8C1"/></linearGradient>
+    <linearGradient id="sv-desk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBF3E0"/><stop offset="1" stop-color="#F1E3C4"/></linearGradient>
+    <linearGradient id="sv-desk-front" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EBD9B3"/><stop offset="1" stop-color="#DDC297"/></linearGradient>
+    <linearGradient id="sv-chair" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#85888F"/><stop offset="1" stop-color="#5A5D64"/></linearGradient>
+    <linearGradient id="sv-box" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F8FAFE"/><stop offset="1" stop-color="#DCE5F5"/></linearGradient>
+    <linearGradient id="sv-box-top" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#EDF2FB"/></linearGradient>
+    <linearGradient id="sv-box-side" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#CBD8EE"/><stop offset="1" stop-color="#B3C5E4"/></linearGradient>
+    <linearGradient id="sv-cat" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FADCA8"/><stop offset="1" stop-color="#EDB671"/></linearGradient>
+    <linearGradient id="sv-mouse" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E3E9F6"/></linearGradient>
+    <filter id="sv-soft" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#2C3D8F" flood-opacity=".18"/></filter>
+    <filter id="sv-soft-s" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#2C3D8F" flood-opacity=".2"/></filter>
+    <filter id="sv-blur" x="-20%" y="-100%" width="140%" height="300%"><feGaussianBlur stdDeviation="8"/></filter>
+  </defs>
+
+  <!-- 뒤쪽: 의자 -->
+  <g filter="url(#sv-soft)">
+    <rect x="470" y="150" width="130" height="250" rx="48" fill="url(#sv-chair)" transform="rotate(4 535 275)"/>
+  </g>
+  <rect x="494" y="172" width="34" height="150" rx="17" fill="#fff" opacity=".1" transform="rotate(4 535 275)"/>
+
+  <!-- 캐릭터: 귀 · 몸 · 얼굴 -->
+  <circle cx="212" cy="80" r="38" fill="#FBFCFF"/>
+  <circle cx="428" cy="80" r="38" fill="#FBFCFF"/>
+  <circle cx="214" cy="86" r="21" fill="#FFD6E1"/>
+  <circle cx="426" cy="86" r="21" fill="#FFD6E1"/>
+  <g filter="url(#sv-soft)"><ellipse cx="320" cy="205" rx="172" ry="160" fill="url(#sv-body)"/></g>
+  <ellipse cx="248" cy="112" rx="86" ry="40" fill="url(#sv-gloss)" transform="rotate(-18 248 112)"/>
+  <ellipse cx="214" cy="262" rx="38" ry="24" fill="url(#sv-blush)"/>
+  <ellipse cx="426" cy="262" rx="38" ry="24" fill="url(#sv-blush)"/>
+  <g fill="none" stroke="#4A3B3E" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M230 164L296 186" stroke-width="12"/>
+    <path d="M410 164L344 186" stroke-width="12"/>
+    <path d="M306 264q7 9 14 0q7 9 14 0" stroke-width="5"/>
+  </g>
+  <ellipse cx="268" cy="218" rx="22" ry="27" fill="#3A2E33"/>
+  <ellipse cx="372" cy="218" rx="22" ry="27" fill="#3A2E33"/>
+  <circle cx="260" cy="206" r="8.5" fill="#fff"/>
+  <circle cx="364" cy="206" r="8.5" fill="#fff"/>
+  <circle cx="277" cy="230" r="3.6" fill="#fff" opacity=".8"/>
+  <circle cx="381" cy="230" r="3.6" fill="#fff" opacity=".8"/>
+
+  <!-- 책상 -->
+  <g filter="url(#sv-soft)">
+    <path d="M0 368H720V499a44 44 0 0 1-44 44H44A44 44 0 0 1 0 499Z" fill="url(#sv-desk)"/>
+  </g>
+  <path d="M0 470H720V499a44 44 0 0 1-44 44H44A44 44 0 0 1 0 499Z" fill="url(#sv-desk-front)"/>
+  <path d="M10 472H710" stroke="#fff" stroke-opacity=".75" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <g fill="none" stroke="#C9AB78" stroke-opacity=".45" stroke-width="3" stroke-linecap="round">
+    <path d="M70 500q110 8 220 0"/><path d="M430 516q100 -8 200 0"/><path d="M180 398q70 6 140 0"/>
+  </g>
+
+  <!-- 왼쪽: 자료함 -->
+  <ellipse cx="92" cy="392" rx="92" ry="11" fill="#8A6A3A" opacity=".28" filter="url(#sv-blur)"/>
+  <g filter="url(#sv-soft-s)">
+    <path d="M18 182L42 158H156L132 182Z" fill="url(#sv-box-top)"/>
+    <path d="M132 182L156 158V364L132 388Z" fill="url(#sv-box-side)"/>
+    <rect x="18" y="182" width="114" height="206" rx="8" fill="url(#sv-box)"/>
+  </g>
+  <g fill="#B4C3E2">
+    <rect x="38" y="204" width="8" height="54" rx="4"/><rect x="58" y="204" width="8" height="54" rx="4"/><rect x="78" y="204" width="8" height="54" rx="4"/><rect x="98" y="204" width="8" height="54" rx="4"/>
+    <rect x="38" y="278" width="8" height="54" rx="4"/><rect x="58" y="278" width="8" height="54" rx="4"/><rect x="78" y="278" width="8" height="54" rx="4"/><rect x="98" y="278" width="8" height="54" rx="4"/>
+  </g>
+  <rect x="38" y="350" width="62" height="10" rx="5" fill="#C9D6EE"/>
+
+  <!-- 노트북 -->
+  <ellipse cx="320" cy="448" rx="230" ry="15" fill="#8A6A3A" opacity=".28" filter="url(#sv-blur)"/>
+  <rect x="150" y="288" width="340" height="128" rx="14" fill="#A8ACB5"/>
+  <g filter="url(#sv-soft-s)"><rect x="150" y="282" width="340" height="128" rx="14" fill="url(#sv-lid)"/></g>
+  <rect x="162" y="294" width="316" height="104" rx="9" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3"/>
+  <g transform="translate(320 346)">
+    <path d="M-26 -14L-24 -36L-6 -22Z" fill="url(#sv-cat)" stroke="#EDB671" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M26 -14L24 -36L6 -22Z" fill="url(#sv-cat)" stroke="#EDB671" stroke-width="6" stroke-linejoin="round"/>
+    <ellipse cx="0" cy="0" rx="31" ry="24" fill="url(#sv-cat)"/>
+    <ellipse cx="-9" cy="-9" rx="14" ry="6" fill="#fff" opacity=".4" transform="rotate(-18 -9 -9)"/>
+  </g>
+  <g filter="url(#sv-soft-s)"><path d="M130 414H510L540 440H100Z" fill="url(#sv-deck)"/></g>
+  <path d="M136 416H504" stroke="#fff" stroke-opacity=".7" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+  <!-- 오른쪽 팔 · 손 -->
+  <g filter="url(#sv-soft-s)">
+    <ellipse cx="500" cy="362" rx="23" ry="50" fill="url(#sv-body)" transform="rotate(-18 500 362)"/>
+    <circle cx="514" cy="406" r="21" fill="url(#sv-body)"/>
+  </g>
+
+  <!-- 마우스 · 케이블 -->
+  <path d="M112 440C74 470 62 498 20 504" fill="none" stroke="#9A9DA6" stroke-width="5" stroke-linecap="round"/>
+  <g filter="url(#sv-soft-s)"><ellipse cx="640" cy="468" rx="36" ry="21" fill="url(#sv-mouse)"/></g>
+  <path d="M640 449V468" stroke="#C9D3E8" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <ellipse cx="628" cy="459" rx="11" ry="4" fill="#fff" opacity=".8" transform="rotate(-12 628 459)"/>
+</svg>
+</template>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     ★★★ 여기만 수정하세요 — 포트폴리오 내용(데이터) ★★★
+     · "TODO: ..." 로 시작하는 글자는 점선 박스(✎ 작성 예정)로 보입니다.
+     · 프로젝트 제목·요약·과정 등은 초안(가제)입니다. 실제 내용으로 바꿔 주세요.
+     ═══════════════════════════════════════════════════════════════ -->
+<script id="portfolio-data">
+const PORTFOLIO = {
+
+  /* ───── 기본 정보 ───── */
+  profile: {
+    nameKo:   '김민주',
+    nameEn:   'MINJU KIM',
+    initials: 'MJ',
+    school:   '가톨릭대학교',
+    major:    '경영학과',
+    company:  'NAVER WEBTOON',          // 지원 기업
+    role:     'TODO: 지원 직무',         // 예) 서비스 기획 / 콘텐츠 마케팅
+    email:    'kagin1019@naver.com',
+    photo:    '',                        // 사진을 쓰려면 이미지 경로 입력 (예: 'photo.jpg'). 비워 두면 일러스트가 나옵니다.
+    heroLabel:'Planning · Data · Webtoon',
+    tagline:  '독자의 마음을 읽고, 이야기가 더 멀리 닿도록 기획합니다.',
+    intro: [   // ← 초안입니다. 본인의 이야기로 바꿔 주세요. (문단 추가/삭제 자유)
+      '안녕하세요, 사용자의 이야기를 숫자와 맥락으로 읽어내는 기획자 김민주입니다.',
+      '가톨릭대학교 경영학과에서 시장과 조직, 데이터를 바라보는 관점을 배웠고, TMCK 인턴 경험과 경기지역 현안해결 해커톤(G-WAVE)을 통해 아이디어를 실제 결과로 연결하는 과정을 경험했습니다.',
+      '매일 수많은 이야기가 오가는 웹툰 플랫폼에서 독자와 창작자 모두가 만족하는 서비스를 함께 만들고 싶어 NAVER WEBTOON에 지원합니다.'
+    ],
+    keywords: ['Insight', 'Planning', 'Data', 'Empathy', 'Collaboration'],
+
+    /* 소개 옆 일러스트 설명 (그림 자체는 아래쪽 <template id="scene-tpl"> 안의 SVG)
+       color: 설명 앞 동그라미 색 / scene 전체를 지우면 그림과 설명이 함께 사라집니다
+       credit: 그림 출처·저작권 표기가 필요하면 여기에 적으세요 (비워 두면 표시 안 됨) */
+    scene: {
+      eyebrow: 'Focus Mode',
+      title:   '집중해서 일하는 중',
+      caption: '문제를 끝까지 파고드는 저의 일하는 모습을 작업 장면으로 담았어요.',
+      credit:  '',
+      points: [
+        { label: '집중하는 표정', color: '#FFB8CB', text: '데이터를 끝까지 들여다보며 문제의 원인을 찾아내는 몰입감을 뜻해요.' },
+        { label: '노트북',       color: '#BFD3FF', text: '분석과 기획 문서를 만드는, 제 작업의 중심입니다.' },
+        { label: '고양이 스티커', color: '#FFE08A', text: '좋아하는 콘텐츠와 독자의 마음을 잊지 않으려는 다짐이에요.' },
+        { label: '옆에 쌓인 자료함', color: '#A8E6CF', text: '근거가 되는 자료를 모으고 정리해 두는 습관을 담았어요.' }
+      ]
+    }
+  },
+
+  /* ───── 프로젝트 (3개) ─────
+     theme: 'blue' | 'navy' | 'sky'   카드·상세 상단 색상
+     draft: true  → "초안" 배지 표시 (확정되면 줄 삭제)
+     problem / process / results 개수는 자유롭게 늘리거나 줄일 수 있습니다.        */
+  projects: [
+    {
+      id: 'webtoon-ux', no: '01', theme: 'blue', draft: true,
+      category: '서비스 분석 · 기획',
+      title: '웹툰 신규 독자 정착률 개선 제안 (가제)',
+      summary: '웹툰 플랫폼의 신규 독자가 첫 작품을 정주행하기까지의 경험을 분석하고, 이탈 지점을 줄이는 개선안을 제안한 프로젝트입니다.',
+      period: 'TODO: 20XX.XX – 20XX.XX',
+      role:   'TODO: 담당 역할',
+      team:   'TODO: 팀 구성',
+      tools:  ['Excel', 'PowerPoint', 'Notion'],
+      tags:   ['서비스 분석', '사용자 리서치', '개선 기획'],
+      overview: '웹툰은 첫 화를 읽는 순간의 경험이 정주행과 결제 전환으로 이어지는 서비스입니다. 이 프로젝트는 신규 독자가 작품을 발견하고 정주행으로 넘어가는 과정을 단계별로 나누어 살펴보고, 이탈이 생기는 지점과 원인을 확인해 개선 방향을 정리했습니다.',
+      problem: [
+        '신규 독자는 수많은 작품 속에서 자신에게 맞는 작품을 찾기 어렵다.',
+        '첫 화를 읽은 뒤 다음 화로 이어지지 않는 이탈 구간이 존재한다.',
+        'TODO: 조사로 확인한 구체적인 문제를 적어 주세요.'
+      ],
+      process: [
+        { title: '현황 파악',    desc: '플랫폼과 경쟁 서비스의 구조를 비교하고 독자 여정을 정의했습니다.' },
+        { title: '사용자 리서치', desc: '설문·인터뷰로 발견–시작–정주행 단계별 불편을 수집했습니다.' },
+        { title: '문제 정의',    desc: '수집한 의견을 묶어 우선순위가 높은 이탈 지점을 도출했습니다.' },
+        { title: '개선안 제안',  desc: '개선안과 기대 효과, 측정 지표(KPI)를 정리했습니다.' }
+      ],
+      results: [
+        { value: 'TODO: 00명', label: '설문·인터뷰 참여 인원' },
+        { value: 'TODO: 0개',  label: '도출한 핵심 이탈 지점' },
+        { value: 'TODO: 0건',  label: '제안한 개선안' }
+      ],
+      learned: '정량 데이터만으로는 보이지 않는 독자의 맥락을 인터뷰로 보완하며, 문제를 “누구의 어떤 순간”으로 좁혀 정의하는 힘을 배웠습니다.',
+      links: [ { label: 'TODO: 발표 자료 / 노션 링크', url: '' } ]
+    },
+    {
+      id: 'tmck', no: '02', theme: 'navy', draft: true,
+      category: '인턴십 · 실무 프로젝트',
+      title: 'TMCK 인턴십 담당 업무 (가제)',
+      summary: 'TMCK 인턴으로 근무하며 맡았던 업무를 실무 관점에서 정리한 프로젝트입니다.',
+      period: 'TODO: 20XX.XX – 20XX.XX',
+      role:   'TODO: 인턴 / 담당 직무',
+      team:   'TODO: 소속 팀',
+      tools:  ['TODO: 사용 툴'],
+      tags:   ['인턴십', '실무 경험', 'TODO: 키워드'],
+      overview: 'TODO: TMCK에서 맡았던 업무의 배경과 목표를 2~3문장으로 적어 주세요.',
+      problem: [
+        'TODO: 인턴 기간 동안 해결해야 했던 과제 1',
+        'TODO: 과제 2',
+        'TODO: 과제 3'
+      ],
+      process: [
+        { title: '업무 이해',   desc: 'TODO: 팀과 맡은 업무의 목표를 이해한 과정' },
+        { title: '실행',        desc: 'TODO: 직접 수행한 주요 업무' },
+        { title: '협업·피드백', desc: 'TODO: 팀원·멘토와 협업하며 개선한 점' },
+        { title: '결과 정리',   desc: 'TODO: 산출물과 팀에 기여한 내용' }
+      ],
+      results: [
+        { value: 'TODO: 0개월', label: '근무 기간' },
+        { value: 'TODO: 0건',   label: '주요 산출물' },
+        { value: 'TODO: 00%',   label: '성과 지표 (있다면)' }
+      ],
+      learned: 'TODO: 인턴십을 통해 배운 점과 NAVER WEBTOON 직무와의 연결점을 적어 주세요.',
+      links: []
+    },
+    {
+      id: 'gwave', no: '03', theme: 'sky', draft: true,
+      category: '해커톤 · 팀 프로젝트',
+      title: '경기지역 현안해결 해커톤 (G-WAVE) 출품작 (가제)',
+      summary: '경기지역이 마주한 현안을 정의하고, 서비스 아이디어로 풀어낸 해커톤 프로젝트입니다.',
+      period: 'TODO: 20XX.XX',
+      role:   'TODO: 담당 역할',
+      team:   'TODO: 팀 구성',
+      tools:  ['PowerPoint', 'TODO: 사용 툴'],
+      tags:   ['해커톤', '지역 현안', '서비스 기획'],
+      overview: '경기지역 현안해결 해커톤(G-WAVE)에서 팀과 함께 지역 문제를 찾아 정의하고, 제한된 시간 안에 해결 아이디어를 서비스 기획안으로 구체화했습니다. TODO: 선정한 현안과 해결 아이디어를 한두 문장으로 추가해 주세요.',
+      problem: [
+        '지역이 직면한 현안은 무엇이며, 누가 가장 큰 불편을 겪는가?',
+        '제한된 시간 안에 검증 가능한 해결 방향은 무엇인가?',
+        'TODO: 팀이 정의한 문제를 한 문장으로 적어 주세요.'
+      ],
+      process: [
+        { title: '현안 탐색',     desc: '지역 데이터와 사례를 조사해 후보 현안을 정리했습니다.' },
+        { title: '문제 정의',     desc: '대상 사용자와 핵심 문제를 한 문장으로 정의했습니다.' },
+        { title: '아이디어 설계', desc: '해결 서비스의 핵심 기능과 운영 방식을 설계했습니다.' },
+        { title: '발표·피드백',   desc: '멘토·심사 피드백을 반영해 기획안을 보완했습니다.' }
+      ],
+      results: [
+        { value: 'TODO: 수상 내역', label: '대회 결과' },
+        { value: 'TODO: 0인',       label: '팀 구성' },
+        { value: 'TODO: 담당 역할', label: '나의 기여' }
+      ],
+      learned: 'TODO: 해커톤에서 배운 점(협업, 시간 관리, 문제 정의 등)을 적어 주세요.',
+      links: []
+    }
+  ],
+
+  /* ───── 역량 ─────
+     icon: 'chart' | 'doc' | 'megaphone' | 'users'                         */
+  skills: {
+    groups: [
+      { icon: 'chart', title: '시장·서비스 분석',
+        desc: '정량 데이터와 사용자 인터뷰를 함께 보며 문제의 원인을 찾습니다.',
+        items: ['데이터 분석', '사용자 리서치', '경쟁사 분석', '시장 조사'] },
+      { icon: 'doc', title: '서비스 기획',
+        desc: '문제를 정의하고 우선순위를 세워 실행 가능한 기획안으로 정리합니다.',
+        items: ['문제 정의', '기능 기획', '우선순위 설정', '기획서 작성'] },
+      { icon: 'megaphone', title: '마케팅·콘텐츠',
+        desc: '콘텐츠의 매력이 타깃에게 닿도록 메시지와 채널을 고민합니다.',
+        items: ['콘텐츠 마케팅', '고객 세분화', 'KPI 설계'] },
+      { icon: 'users', title: '협업·커뮤니케이션',
+        desc: '서로 다른 의견을 조율하며 팀의 결과물을 함께 완성합니다.',
+        items: ['팀 프로젝트', '발표·설득', '일정·역할 조율'] }
+    ],
+    toolsTitle: 'Tools',
+    tools: ['Excel', 'PowerPoint', 'Notion', 'Figma', 'TODO: 툴 추가']
+  },
+
+  /* ───── 활동 기록 ─────
+     projectId 를 적으면 "프로젝트 상세 보기" 버튼이 생깁니다. (위 projects 의 id)  */
+  activities: [
+    { type: '인턴', title: 'TMCK 인턴', org: 'TMCK',
+      period: 'TODO: 20XX.XX – 20XX.XX',
+      summary: 'TODO: 인턴 기간 동안의 역할과 성과를 한두 문장으로 적어 주세요.',
+      bullets: ['TODO: 주요 업무 1', 'TODO: 주요 업무 2'],
+      projectId: 'tmck' },
+    { type: '대회', title: '경기지역 현안해결 해커톤 (G-WAVE)', org: '경기지역 현안해결 해커톤',
+      period: 'TODO: 20XX.XX',
+      summary: 'TODO: 참가 팀 구성, 맡은 역할, 결과를 적어 주세요.',
+      bullets: ['TODO: 주요 활동 1', 'TODO: 수상 / 성과'],
+      projectId: 'gwave' },
+    { placeholder: 'TODO: 동아리 · 대외활동 · 수상 경력을 여기에 추가하세요.' }
+  ],
+  education: [
+    { period: 'TODO: 20XX.03 – 재학', name: '가톨릭대학교', detail: '경영학과' },
+    { period: 'TODO: 20XX.03',        name: 'TODO: 고등학교', detail: '' }
+  ],
+  certificates: [
+    { date: 'TODO: 20XX.XX', name: 'TODO: 자격증 · 어학 성적', org: 'TODO: 발급 기관' }
+  ],
+
+  /* ───── 연락처 ─────
+     url 이 있으면 클릭 가능한 링크가 됩니다.                                  */
+  contact: {
+    lead: '이야기를 기획으로, 기획을 서비스로 만드는 일에 늘 관심이 있습니다. 편하게 연락 주세요.',
+    items: [
+      { label: 'PHONE', value: 'TODO: 010-0000-0000' },
+      { label: 'LINK',  value: 'TODO: Notion / 블로그 / LinkedIn 주소', url: '' }
+    ]
+  }
+};
+</script>
+
+<!-- ═══════════════ 화면 구성 코드 (보통 수정할 필요 없음) ═══════════════ -->
+<script>
+(function () {
+  'use strict';
+  const D = PORTFOLIO;
+  const $ = (s, r) => (r || document).querySelector(s);
+  const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+
+  /* ── 유틸 ── */
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const isTodo = s => typeof s === 'string' && /^TODO/.test(s);
+  const tx = s => isTodo(s) ? '<span class="todo">' + (esc(s.replace(/^TODO:?\s*/, '')) || '작성 예정') + '</span>' : esc(s);
+  const get = (o, path) => path.split('.').reduce((a, k) => (a == null ? a : a[k]), o);
+  const icon = (id, cls) => '<svg class="' + (cls || '') + '" aria-hidden="true"><use href="#i-' + id + '"/></svg>';
+
+  /* 바코드 / 별 모양 장식 생성 */
+  function barcode(seed, w, h) {
+    w = w || 160; h = h || 40;
+    let s = 0; for (const ch of String(seed)) s = (s * 31 + ch.charCodeAt(0)) >>> 0;
+    const rnd = () => { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; };
+    let x = 0, out = '';
+    while (x < w) {
+      const bw = 1 + Math.floor(rnd() * 3), gap = 1 + Math.floor(rnd() * 3);
+      if (x + bw > w) break;
+      out += '<rect x="' + x + '" y="0" width="' + bw + '" height="' + h + '"/>';
+      x += bw + gap;
+    }
+    return '<svg class="barcode" viewBox="0 0 ' + w + ' ' + h + '" preserveAspectRatio="none" aria-hidden="true" fill="currentColor">' + out + '</svg>';
+  }
+  function starSVG() {
+    const n = 12, R = 50, r = 33, pts = [];
+    for (let i = 0; i < n * 2; i++) {
+      const a = Math.PI * i / n - Math.PI / 2, rad = i % 2 ? r : R;
+      pts.push((Math.cos(a) * rad).toFixed(1) + ',' + (Math.sin(a) * rad).toFixed(1));
+    }
+    return '<svg viewBox="-52 -52 104 104" aria-hidden="true"><polygon points="' + pts.join(' ') + '" fill="#fff"/><circle r="11" fill="#0B1F5C"/></svg>';
+  }
+
+  const SECTIONS = [
+    { id: 'about',    no: '01', label: '소개',      en: 'About' },
+    { id: 'projects', no: '02', label: '프로젝트',  en: 'Projects' },
+    { id: 'skills',   no: '03', label: '역량',      en: 'Skills' },
+    { id: 'activity', no: '04', label: '활동 기록', en: 'Resume' },
+    { id: 'contact',  no: '05', label: '연락처',    en: 'Contact' }
+  ];
+
+  /* ── 간단 바인딩 ── */
+  $$('[data-bind]').forEach(el => { el.textContent = get(D, el.dataset.bind); });
+  $('#year').textContent = new Date().getFullYear();
+  $$('[data-star]').forEach(el => { el.innerHTML = starSVG(); });
+  document.title = D.profile.nameKo + ' | Portfolio — ' + D.profile.company;
+
+  /* ── HERO ── */
+  (function renderHero() {
+    const p = D.profile;
+    $('#hero-label').textContent = p.heroLabel;
+    $('#hero-copy').innerHTML =
+      '<p class="hero-hello">안녕하세요, <b>' + esc(p.nameKo) + '</b>입니다.</p>' +
+      '<p class="hero-tag">' + esc(p.tagline) + '</p>';
+
+    const chips = D.activities.filter(a => a.title).slice(0, 3)
+      .map(a => '<span class="chip"><em>' + esc(a.type) + '</em>' + esc(a.org || a.title) + '</span>').join('');
+
+    $('#hero-ticket').innerHTML =
+      '<div class="ticket">' +
+        '<div class="ticket-stub">' +
+          '<div><div class="stub-label">BOARDING PASS</div><div class="stub-name">' + esc(p.nameEn) + '</div></div>' +
+          icon('plane', 'stub-plane') +
+          barcode(p.nameEn + p.company, 160, 40) +
+        '</div>' +
+        '<div class="ticket-main">' +
+          '<div class="ticket-head">' + icon('plane', 'plane') + '<strong>' + esc(p.nameEn) + '</strong></div>' +
+          '<dl class="route">' +
+            '<div><dt>FROM</dt><dd>' + esc(p.school) + '<small>' + esc(p.major) + '</small></dd></div>' +
+            icon('arrow', 'route-arrow') +
+            '<div><dt>TO</dt><dd>' + esc(p.company) + '<small>' + tx(p.role) + '</small></dd></div>' +
+          '</dl>' +
+          '<div class="chips-row">' + chips + '</div>' +
+          '<nav class="toc" aria-label="목차">' +
+            SECTIONS.map(s => '<a href="#' + s.id + '"><span class="no">' + s.no + '</span><span class="lb">' + s.label + '</span><span class="en">' + s.en + '</span></a>').join('') +
+          '</nav>' +
+        '</div>' +
+      '</div>';
+  })();
+
+  /* ── 소개 ── */
+  (function renderAbout() {
+    const p = D.profile;
+    // 프로필 사진은 선택 사항: PORTFOLIO.profile.photo 에 경로를 넣었을 때만 표시됩니다.
+    const photo = p.photo ? '<div class="profile-img"><img src="' + esc(p.photo) + '" alt="' + esc(p.nameKo) + ' 프로필 사진"></div>' : '';
+    const mail = '<a href="mailto:' + esc(p.email) + '">' + esc(p.email) + '</a>';
+    const tpl = $('#scene-tpl'), sc = p.scene;
+    const scene = (tpl && sc)
+      ? '<figure class="scene"><div class="scene-motion">' + tpl.innerHTML + '</div>' +
+        '<div class="scene-tools"><button type="button" class="motion-toggle" id="motion-toggle">⏸ 움직임 멈춤</button></div>' +
+        '<figcaption><p class="sub">' + esc(sc.eyebrow) + '</p>' +
+        '<p class="scene-title">' + tx(sc.title) + '</p><p class="scene-cap">' + tx(sc.caption) + '</p>' +
+        '<ul class="scene-points">' + (sc.points || []).map(pt =>
+          '<li style="--c:' + esc(pt.color || '#A8B1CE') + '"><span><strong>' + tx(pt.label) + '</strong>' + tx(pt.text) + '</span></li>').join('') +
+        '</ul>' + (sc.credit ? '<p class="scene-credit">' + tx(sc.credit) + '</p>' : '') + '</figcaption></figure>'
+      : '';
+    $('#about-body').innerHTML =
+      '<div class="profile-wrap' + (p.photo ? ' has-photo' : '') + '">' +
+        photo +
+        '<dl class="info">' +
+          '<div><dt>NAME</dt><dd>' + esc(p.nameKo) + ' · ' + esc(p.nameEn) + '</dd></div>' +
+          '<div><dt>SCHOOL</dt><dd>' + esc(p.school) + ' ' + esc(p.major) + '</dd></div>' +
+          '<div><dt>TARGET</dt><dd>' + esc(p.company) + ' · ' + tx(p.role) + '</dd></div>' +
+          '<div><dt>MAIL</dt><dd>' + mail + '</dd></div>' +
+        '</dl>' +
+      '</div>' +
+      '<div class="about-text">' +
+        '<p class="sub">About me</p>' +
+        '<p class="quote">' + esc(p.tagline) + '</p>' +
+        p.intro.map(t => '<p>' + tx(t) + '</p>').join('') +
+        '<div class="keywords"><p class="sub">Keyword</p><ul class="pills">' +
+          p.keywords.map(k => '<li class="pill">' + esc(k) + '</li>').join('') +
+        '</ul></div>' +
+      '</div>' + scene;
+  })();
+
+  /* ── 소개 옆 일러스트 움직임 (.scene-motion) ──
+     · 7초 주기로 위아래 5px 떠오름 (rAF 시간 값 기반)
+     · PC(마우스)에서만 마우스를 따라 조금 이동, 기울기 최대 4도
+     · 스크롤하면 위로 최대 20px
+     · 움직임 멈춤 버튼 / prefers-reduced-motion(기본 꺼짐) / 숨겨진 탭·화면 밖에서는 정지 */
+  (function sceneMotion() {
+    const el = $('.scene-motion'), card = $('.scene'), btn = $('#motion-toggle');
+    if (!el || !card || !btn) return;
+
+    const FLOAT_AMP = 5, FLOAT_PERIOD = 7000;          // px, ms
+    const POINTER_X = 8, POINTER_Y = 6, TILT_MAX = 4;   // px, px, deg
+    const SCROLL_MAX = 20;                              // px (위쪽)
+    const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+    const listen = (mq, fn) => (mq.addEventListener ? mq.addEventListener('change', fn) : mq.addListener(fn));
+    const reduceMQ = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const fineMQ = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+    let on = !reduceMQ.matches;     // 움직임 켜짐 여부 (시스템에서 움직임 줄이기를 켰다면 처음엔 꺼짐)
+    let rafId = 0, last = 0, clock = 0, inView = true;
+    const cur = { x: 0, y: 0, rx: 0, ry: 0, scroll: 0, f: 0 };   // 현재 값 (부드럽게 따라감)
+    const tgt = { x: 0, y: 0, rx: 0, ry: 0 };                    // 마우스 목표 값
+
+    function paintBtn() {
+      btn.textContent = on ? '⏸ 움직임 멈춤' : '▶ 움직임 재생';
+      btn.setAttribute('aria-label', on ? '그림 움직임 멈춤' : '그림 움직임 재생');
+    }
+    function settled() {
+      return Math.abs(cur.f) < 0.002 && Math.abs(cur.scroll) < 0.05 && Math.abs(cur.x) < 0.05 && Math.abs(cur.y) < 0.05 &&
+             Math.abs(cur.rx) < 0.02 && Math.abs(cur.ry) < 0.02;
+    }
+    function resetTarget() { tgt.x = tgt.y = tgt.rx = tgt.ry = 0; }
+
+    function frame(ts) {
+      rafId = requestAnimationFrame(frame);
+      if (!last) last = ts;
+      const dt = Math.min(64, ts - last); last = ts;   // 탭 복귀 등으로 시간이 크게 튀는 것을 막음
+      if (on) clock += dt;                              // 멈춤 중에는 시계도 멈춤 → 다시 켜면 이어서 움직임
+      const k = tau => 1 - Math.exp(-dt / tau);         // 프레임 속도와 상관없는 부드러운 따라가기
+
+      // 스크롤: 카드가 화면 아래에서 들어와 위로 나갈 때 0 → 1
+      const r = card.getBoundingClientRect(), vh = window.innerHeight || document.documentElement.clientHeight;
+      const p = clamp((vh - r.top) / (vh + r.height), 0, 1);
+
+      cur.f      += ((on ? 1 : 0) - cur.f) * k(450);
+      cur.scroll += ((on ? -SCROLL_MAX * p : 0) - cur.scroll) * k(260);
+      cur.x      += (tgt.x  - cur.x)  * k(170);
+      cur.y      += (tgt.y  - cur.y)  * k(170);
+      cur.rx     += (tgt.rx - cur.rx) * k(200);
+      cur.ry     += (tgt.ry - cur.ry) * k(200);
+
+      const bob = Math.sin(2 * Math.PI * clock / FLOAT_PERIOD) * FLOAT_AMP * cur.f;
+      el.style.transform = 'translate3d(' + cur.x.toFixed(2) + 'px,' + (cur.y + bob + cur.scroll).toFixed(2) + 'px,0) ' +
+        'perspective(900px) rotateX(' + cur.rx.toFixed(3) + 'deg) rotateY(' + cur.ry.toFixed(3) + 'deg)';
+
+      if (!on && settled()) { el.style.transform = ''; stop(); }   // 멈춤 상태로 다 가라앉으면 루프 종료
+    }
+    function start() { if (!rafId && !document.hidden && inView) { last = 0; rafId = requestAnimationFrame(frame); } }
+    function stop()  { if (rafId) { cancelAnimationFrame(rafId); rafId = 0; } }
+
+    /* 마우스 따라가기: 마우스가 있는 PC에서만 (터치 기기에서는 리스너 자체를 달지 않음) */
+    function onMove(e) {
+      if (!on || e.pointerType !== 'mouse') return;
+      const nx = clamp(e.clientX / window.innerWidth * 2 - 1, -1, 1), ny = clamp(e.clientY / window.innerHeight * 2 - 1, -1, 1);
+      let ry = nx * TILT_MAX, rx = -ny * TILT_MAX;
+      const m = Math.hypot(rx, ry); if (m > TILT_MAX) { rx *= TILT_MAX / m; ry *= TILT_MAX / m; }   // 기울기 최대 4도
+      tgt.x = nx * POINTER_X; tgt.y = ny * POINTER_Y; tgt.rx = rx; tgt.ry = ry;
+    }
+    let bound = false;
+    function bindPointer() {
+      if (fineMQ.matches && !bound) {
+        window.addEventListener('pointermove', onMove, { passive: true });
+        document.documentElement.addEventListener('mouseleave', resetTarget);
+        window.addEventListener('blur', resetTarget);
+        bound = true;
+      } else if (!fineMQ.matches && bound) {
+        window.removeEventListener('pointermove', onMove);
+        document.documentElement.removeEventListener('mouseleave', resetTarget);
+        window.removeEventListener('blur', resetTarget);
+        resetTarget(); bound = false;
+      }
+    }
+
+    btn.addEventListener('click', () => { on = !on; if (!on) resetTarget(); paintBtn(); start(); });
+    listen(reduceMQ, () => { on = !reduceMQ.matches; if (!on) resetTarget(); paintBtn(); start(); });
+    listen(fineMQ, bindPointer);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); else start(); });   // 숨겨진 탭에서는 정지
+    if ('IntersectionObserver' in window) {                                                                   // 화면 밖에서는 정지
+      new IntersectionObserver(es => { inView = es[0].isIntersecting; if (inView) start(); else stop(); }, { rootMargin: '80px 0px' }).observe(card);
+    }
+
+    bindPointer(); paintBtn(); start();
+  })();
+
+  /* ── 프로젝트 카드 ── */
+  (function renderProjects() {
+    $('#project-list').innerHTML = D.projects.map(pj =>
+      '<article class="card">' +
+        '<div class="card-art t-' + esc(pj.theme || 'blue') + '">' +
+          '<div class="card-top"><span class="card-no">' + esc(pj.no) + '</span><span class="card-cat">' + esc(pj.category) + '</span></div>' +
+          '<div class="card-bottom">' + icon('plane', 'plane') + barcode(pj.id, 120, 26) + '</div>' +
+        '</div>' +
+        '<div class="card-body">' +
+          (pj.draft ? '<span class="badge-draft">DRAFT · 초안</span>' : '') +
+          '<h3>' + tx(pj.title) + '</h3>' +
+          '<p>' + tx(pj.summary) + '</p>' +
+          '<ul class="tags">' + (pj.tags || []).map(t => '<li>' + tx(t) + '</li>').join('') + '</ul>' +
+          '<button type="button" class="card-btn" data-open="' + esc(pj.id) + '" aria-label="' + esc(pj.title.replace(/^TODO:?\s*/, '')) + ' 상세 보기">상세 보기 →</button>' +
+        '</div>' +
+      '</article>'
+    ).join('');
+  })();
+
+  /* ── 역량 ── */
+  (function renderSkills() {
+    const s = D.skills;
+    $('#skills-body').innerHTML =
+      '<div class="skills">' +
+        s.groups.map(g =>
+          '<div class="skill"><div class="skill-ic">' + icon(g.icon || 'chart') + '</div>' +
+          '<h3>' + tx(g.title) + '</h3><p>' + tx(g.desc) + '</p>' +
+          '<ul class="pills">' + g.items.map(i => '<li class="pill">' + tx(i) + '</li>').join('') + '</ul></div>'
+        ).join('') +
+      '</div>' +
+      '<div class="tools"><p class="sub">' + esc(s.toolsTitle || 'Tools') + '</p><ul class="pills">' +
+        s.tools.map(t => '<li class="pill">' + tx(t) + '</li>').join('') +
+      '</ul></div>';
+  })();
+
+  /* ── 활동 기록 ── */
+  (function renderActivity() {
+    const exp = D.activities.map((a, i) => {
+      if (a.placeholder) return '<div class="exp-placeholder"><span>+ ADD</span><span>' + tx(a.placeholder) + '</span></div>';
+      const btn = a.projectId ? '<button type="button" class="link-btn" data-open="' + esc(a.projectId) + '">프로젝트 상세 보기 →</button>' : '';
+      return '<details class="exp"' + (i === 0 ? ' open' : '') + '>' +
+        '<summary><span class="exp-period">' + tx(a.period) + '</span>' +
+          '<span><span class="exp-type">' + esc(a.type) + '</span><span class="exp-title">' + tx(a.title) + '</span><span class="exp-org">' + tx(a.org) + '</span></span></summary>' +
+        '<div class="exp-body">' + (a.summary ? '<p>' + tx(a.summary) + '</p>' : '') +
+          ((a.bullets && a.bullets.length) ? '<ul>' + a.bullets.map(b => '<li>' + tx(b) + '</li>').join('') + '</ul>' : '') + btn + '</div>' +
+      '</details>';
+    }).join('');
+
+    const edu = D.education.map(e =>
+      '<li><span class="d">' + tx(e.period) + '</span><span><strong>' + tx(e.name) + '</strong>' + (e.detail ? '<span class="o">' + tx(e.detail) + '</span>' : '') + '</span></li>').join('');
+    const cert = D.certificates.map(c =>
+      '<li><span class="d">' + tx(c.date) + '</span><span><strong>' + tx(c.name) + '</strong><span class="o">' + tx(c.org) + '</span></span></li>').join('');
+
+    $('#activity-body').innerHTML =
+      '<div><p class="sub">Experience</p><div class="exp-list">' + exp + '</div></div>' +
+      '<div><div class="side-block"><p class="sub">Education</p><ul class="rows">' + edu + '</ul></div>' +
+      '<div class="side-block"><p class="sub">Certificate</p><ul class="rows">' + cert + '</ul></div></div>';
+  })();
+
+  /* ── 연락처 ── */
+  (function renderContact() {
+    const p = D.profile, c = D.contact;
+    const rows = [{ label: 'MAIL', value: p.email, url: 'mailto:' + p.email }].concat(c.items).map(it => {
+      const v = (it.url && !isTodo(it.value)) ? '<a href="' + esc(it.url) + '" target="_blank" rel="noopener">' + esc(it.value) + '</a>' : tx(it.value);
+      return '<div><dt>' + esc(it.label) + '</dt><dd>' + v + '</dd></div>';
+    }).join('');
+    $('#contact-body').innerHTML =
+      '<div class="contact-copy">' +
+        '<div class="contact-big" aria-hidden="true">Let’s talk</div>' +
+        '<p class="lead">' + tx(c.lead) + '</p>' +
+        '<div class="actions">' +
+          '<a class="btn" href="mailto:' + esc(p.email) + '">이메일 보내기</a>' +
+          '<button type="button" class="btn ghost" id="copy-mail">이메일 주소 복사</button>' +
+        '</div>' +
+        '<p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>' +
+      '</div>' +
+      '<div class="ticket contact-ticket on-light" style="--notch:var(--navy)">' +
+        '<div class="ticket-main">' +
+          '<div class="ticket-head">' + icon('plane', 'plane') + '<strong>' + esc(p.nameEn) + '</strong></div>' +
+          '<dl class="route">' +
+            '<div><dt>FROM</dt><dd>' + esc(p.nameKo) + '<small>' + esc(p.school) + ' ' + esc(p.major) + '</small></dd></div>' +
+            icon('arrow', 'route-arrow') +
+            '<div><dt>TO</dt><dd>' + esc(p.company) + '<small>' + tx(p.role) + '</small></dd></div>' +
+          '</dl>' +
+          '<dl class="contact-list">' + rows + '</dl>' +
+          barcode(p.email, 220, 40) +
+        '</div>' +
+      '</div>';
+
+    const btn = $('#copy-mail'), st = $('#copy-status');
+    btn.addEventListener('click', function () {
+      const done = ok => { st.textContent = ok ? '이메일 주소를 복사했어요: ' + p.email : '복사하지 못했어요. 주소를 직접 선택해 주세요: ' + p.email; };
+      const legacyCopy = () => {
+        const ta = document.createElement('textarea'); ta.value = p.email; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        let ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta); return ok;
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(p.email).then(() => done(true), () => done(legacyCopy()));
+      } else {
+        done(legacyCopy());
+      }
+    });
+  })();
+
+  /* ── 모바일 메뉴 ── */
+  const menuBtn = $('#menu-btn'), nav = $('#nav');
+  function setMenu(open) {
+    nav.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  }
+  menuBtn.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
+  nav.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('open')) { setMenu(false); menuBtn.focus(); } });
+  window.matchMedia('(min-width: 861px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
+
+  /* ── 현재 위치 메뉴 표시 ── */
+  (function scrollSpy() {
+    if (!('IntersectionObserver' in window)) return;
+    const links = $$('.nav a'), map = {};
+    links.forEach(a => { map[a.getAttribute('href').slice(1)] = a; });
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        links.forEach(a => a.removeAttribute('aria-current'));
+        if (map[en.target.id]) map[en.target.id].setAttribute('aria-current', 'true');
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    $$('main section[id]').forEach(s => io.observe(s));
+  })();
+
+  /* ── 프로젝트 상세 보기 ── */
+  const dlg = $('#detail');
+  let pushed = false;
+  const idxOf = id => D.projects.findIndex(p => p.id === id);
+
+  function detailHTML(i) {
+    const p = D.projects[i], n = D.projects.length;
+    const prev = D.projects[(i - 1 + n) % n], next = D.projects[(i + 1) % n];
+    const meta = [['기간', tx(p.period)], ['역할', tx(p.role)], ['구성', tx(p.team)], ['도구', (p.tools && p.tools.length) ? p.tools.map(tx).join(' · ') : '—']];
+    const links = (p.links || []).map(l => (l.url && !isTodo(l.label))
+      ? '<a class="btn" href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + '</a>'
+      : '<span>' + tx(l.label) + '</span>').join('');
+    const navBtns = n > 1
+      ? '<button type="button" class="prev" data-open="' + esc(prev.id) + '"><small>← PREV</small><strong>' + tx(prev.title) + '</strong></button>' +
+        '<button type="button" class="next" data-open="' + esc(next.id) + '"><small>NEXT →</small><strong>' + tx(next.title) + '</strong></button>'
+      : '';
+    return '' +
+      '<div class="d-bar"><span class="d-count">PROJECT ' + esc(p.no) + ' / ' + String(n).padStart(2, '0') + '</span>' +
+        '<button type="button" class="d-close" data-close>닫기 ✕</button></div>' +
+      '<div class="d-hero t-' + esc(p.theme || 'blue') + ' on-' + (p.theme === 'sky' ? 'light' : 'dark') + '">' +
+        '<span class="big-no" aria-hidden="true">' + esc(p.no) + '</span>' +
+        '<p class="cat">' + esc(p.category) + (p.draft ? '<span class="badge-draft">DRAFT · 초안</span>' : '') + '</p>' +
+        '<h2 id="detail-title">' + tx(p.title) + '</h2>' +
+        '<p class="lead">' + tx(p.summary) + '</p>' +
+        '<dl class="d-meta">' + meta.map(m => '<div><dt>' + m[0] + '</dt><dd>' + m[1] + '</dd></div>').join('') + '</dl>' +
+      '</div>' +
+      '<div class="d-body">' +
+        '<section class="d-sec"><p class="eyebrow">Overview</p><h3>프로젝트 개요</h3><p class="txt">' + tx(p.overview) + '</p></section>' +
+        '<section class="d-sec"><p class="eyebrow">Problem</p><h3>문제 정의</h3><div class="cards3">' +
+          p.problem.map((t, k) => '<div class="pcard"><span class="n">' + String(k + 1).padStart(2, '0') + '</span>' + tx(t) + '</div>').join('') +
+        '</div></section>' +
+        '<section class="d-sec"><p class="eyebrow">Process</p><h3>접근 과정</h3><ol class="steps">' +
+          p.process.map((s, k) => '<li><span class="c">' + (k + 1) + '</span><h4>' + tx(s.title) + '</h4><p>' + tx(s.desc) + '</p></li>').join('') +
+        '</ol></section>' +
+        '<section class="d-sec"><p class="eyebrow">Result</p><h3>핵심 결과</h3><div class="stats">' +
+          p.results.map(r => '<div class="stat"><b>' + tx(r.value) + '</b><span class="l">' + tx(r.label) + '</span></div>').join('') +
+        '</div></section>' +
+        '<section class="d-sec"><p class="eyebrow">Reflection</p><h3>배운 점</h3><div class="learned">' + tx(p.learned) + '</div></section>' +
+        (links ? '<section class="d-sec"><p class="eyebrow">Links</p><h3>관련 자료</h3><div class="d-links">' + links + '</div></section>' : '') +
+      '</div>' +
+      '<div class="d-nav">' + navBtns + '</div>';
+  }
+
+  function openProject(id, opts) {
+    const i = idxOf(id); if (i < 0) return;
+    const fromHash = opts && opts.fromHash;
+    const wasOpen = dlg.open;
+    dlg.innerHTML = detailHTML(i);
+    dlg.scrollTop = 0;
+    if (!wasOpen) {
+      dlg.showModal();
+      document.documentElement.classList.add('modal-open');
+    }
+    const url = '#project-' + id;
+    if (!fromHash && location.hash !== url) {
+      if (wasOpen) history.replaceState(null, '', url);
+      else { history.pushState(null, '', url); pushed = true; }
+    }
+    const c = $('.d-close', dlg); if (c) c.focus();
+    dlg.scrollTop = 0;
+  }
+
+  dlg.addEventListener('close', () => {
+    document.documentElement.classList.remove('modal-open');
+    if (/^#project-/.test(location.hash)) {
+      if (pushed) { pushed = false; history.back(); }
+      else history.replaceState(null, '', location.pathname + location.search + '#projects');
+    }
+  });
+  dlg.addEventListener('click', e => {
+    if (e.target === dlg || e.target.closest('[data-close]')) { dlg.close(); return; }
+    const o = e.target.closest('[data-open]'); if (o) openProject(o.dataset.open);
+  });
+  document.addEventListener('click', e => {
+    const o = e.target.closest('[data-open]');
+    if (o && !dlg.contains(o)) openProject(o.dataset.open);
+  });
+
+  function syncFromHash() {
+    const m = location.hash.match(/^#project-(.+)$/);
+    if (m && idxOf(m[1]) >= 0) openProject(m[1], { fromHash: true });
+    else if (dlg.open) { pushed = false; dlg.close(); }
+  }
+  window.addEventListener('popstate', syncFromHash);
+  syncFromHash();
+})();
+</script>
+</body>
+</html>
