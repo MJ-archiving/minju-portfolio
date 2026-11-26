@@ -162,6 +162,8 @@ img,svg{display:block;max-width:100%}
 .info div{display:grid;grid-template-columns:minmax(0,1fr);gap:0;font-size:15px}
 .info dt{font-family:var(--font-en);font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--blue)}
 .info dd{font-weight:500;overflow-wrap:anywhere}
+.info dd a{color:inherit;text-decoration:none}
+.info dd a:hover{color:var(--blue)}
 .quote{font-size:clamp(22px,3vw,30px);font-weight:700;line-height:1.45;color:var(--navy);margin-bottom:28px}
 .quote::before{content:"“";color:var(--primary);margin-right:4px}
 .quote::after{content:"”";color:var(--primary);margin-left:2px}
@@ -254,7 +256,6 @@ img,svg{display:block;max-width:100%}
 .exp-body li::before{content:"";position:absolute;left:0;top:.78em;width:6px;height:6px;border-radius:50%;background:var(--primary)}
 .link-btn{margin-top:18px;display:inline-flex;align-items:center;gap:6px;border:0;background:transparent;padding:0;color:var(--blue);font-weight:700;font-size:15px}
 .link-btn:hover{text-decoration:underline}
-.exp-placeholder{border:2px dashed var(--gray-2);border-radius:20px;padding:22px 26px;color:var(--gray);display:grid;grid-template-columns:116px 1fr;gap:16px;align-items:center;font-size:15px}
 .side-block + .side-block{margin-top:44px}
 .rows li{display:grid;grid-template-columns:112px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
 .rows .d{font-family:var(--font-en);font-weight:700;font-size:13px;color:var(--navy);padding-top:2px}
@@ -281,7 +282,7 @@ img,svg{display:block;max-width:100%}
 .contact-list div{display:grid;grid-template-columns:84px 1fr;gap:12px;padding:14px 0;border-bottom:1px dotted var(--gray-2);align-items:baseline}
 .contact-list dt{font-family:var(--font-en);font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--blue)}
 .contact-list dd{font-weight:600;color:var(--navy);overflow-wrap:anywhere}
-.contact-list a{color:var(--navy)}
+.contact-list a{color:var(--navy);text-decoration:none}
 .contact-list a:hover{color:var(--blue)}
 .contact-ticket .barcode{height:42px;margin-top:26px;color:var(--blue)}
 .copy-status{min-height:1.6em;margin-top:12px;font-size:14px;color:#9DB8FF}
@@ -374,7 +375,6 @@ dialog.detail::backdrop{background:rgba(11,31,92,.74)}
   .exp summary{grid-template-columns:1fr 28px;gap:6px 12px;padding:18px 20px}
   .exp-period{grid-column:1/-1}
   .exp-body{padding:0 20px 22px}
-  .exp-placeholder{grid-template-columns:1fr;gap:4px;padding:18px 20px}
   .rows li{grid-template-columns:96px 1fr}
   .route{grid-template-columns:1fr;gap:4px}
   .route-arrow{transform:rotate(90deg);margin:2px 0}
@@ -734,23 +734,20 @@ const PORTFOLIO = {
       period: '2025.09 – 2025.12',
       summary: '6명이 한 조로 "혁신적인 조직을 만들기 위해 리더십은 어떻게 변해야 하는가"를 주제로 발표를 준비했고, 발표자로 참여했습니다.',
       bullets: ['질문지 초안과 PPT 방향성을 제안하고 현직자 6명 대상 설문을 진행', '임파워링 리더십 → 셀프리더십 → 민첩성 → 혁신성의 논리 구조로 주제를 확정', '전체 팀 중 2위'] },
-    { type: '봉사', title: '서울역 무료진료소 운영팀장', org: '사단법인 프리메드',
-      period: '2024.03 – 2024.08',
-      summary: '진료소 운영 전반을 총괄하며 팀원 배치와 업무 체계를 관리했습니다.',
-      bullets: ['약 48회 이상 진료소 운영', '신입 단원 인력배치표를 엑셀로 정리하고 교육자료를 현행화', '매주 현장 상황과 단원 의견을 확인해 표준화한 보고서로 대표님께 직접 보고, 상부 지원 요청 대다수 수용', '2024.07.31 요일별 업무자료와 인수인계 문서를 후임 팀장에게 전달'] },
-    { type: '인턴', title: 'TMCK 인턴', org: 'TMCK',
-      period: 'TODO: 20XX.XX – 20XX.XX',
-      summary: 'TODO: 인턴 기간 동안의 역할과 성과를 한두 문장으로 적어 주세요. (경험정리 엑셀에는 아직 없는 항목입니다)',
-      bullets: ['TODO: 주요 업무 1', 'TODO: 주요 업무 2'] },
-    { placeholder: 'TODO: 추가할 동아리 · 대외활동 · 수상 경력이 있으면 여기에 추가하세요.' }
   ],
+  /* 오른쪽 열: EDUCATION → INTERNSHIP → CERTIFICATE 순서로 표시됩니다.
+     detail / org 는 이름 아래 회색 글씨로 보입니다 (비우면 표시 안 됨). */
   education: [
-    { period: '4학년 재학 중', name: '가톨릭대학교', detail: '경영학과' },
-    { period: '2026.07 – 2026.08', name: '코멘토 인사직무캠프', detail: 'HR 실무 과제 수행 (교육)' },
-    { period: 'TODO: 20XX.03', name: 'TODO: 고등학교', detail: '' }
+    { period: '4학년 재학 중', name: '가톨릭대학교', detail: '경영학과' }
+  ],
+  internships: [
+    { period: '2026.12.21 – 2027.06.20', name: 'TMCK 인턴', detail: '6개월 (예정)' },
+    { period: '2024.03 – 2024.08', name: '서울역 무료진료소 운영팀장', detail: 'PM 총괄' }
   ],
   certificates: [
-    { date: 'TODO: 20XX.XX', name: 'TODO: 자격증 · 어학 성적', org: 'TODO: 발급 기관' }
+    { date: '2026', name: 'TOEIC SPEAKING IH', org: '한국TOEIC위원회' },
+    { date: '2023', name: '컴퓨터활용능력 2급', org: '대한상공회의소' },
+    { date: '2022', name: '전산회계 2급', org: '한국세무사회' }
   ],
 
   /* ───── 연락처 ─────
@@ -758,8 +755,7 @@ const PORTFOLIO = {
   contact: {
     lead: '사람과 조직이 함께 성장하는 방법을 계속 고민하고 있습니다. 편하게 연락 주세요.',
     items: [
-      { label: 'PHONE', value: 'TODO: 010-0000-0000' },
-      { label: 'LINK',  value: 'TODO: Notion / 블로그 / LinkedIn 주소', url: '' }
+      { label: 'PHONE', value: '010-3569-9060', url: 'tel:010-3569-9060' }
     ]
   }
 };
@@ -1018,7 +1014,6 @@ const PORTFOLIO = {
   /* ── 활동 기록 ── */
   (function renderActivity() {
     const exp = D.activities.map((a, i) => {
-      if (a.placeholder) return '<div class="exp-placeholder"><span>+ ADD</span><span>' + tx(a.placeholder) + '</span></div>';
       const btn = a.projectId ? '<button type="button" class="link-btn" data-open="' + esc(a.projectId) + '">프로젝트 상세 보기 →</button>' : '';
       return '<details class="exp"' + (i === 0 ? ' open' : '') + '>' +
         '<summary><span class="exp-period">' + tx(a.period) + '</span>' +
@@ -1028,22 +1023,28 @@ const PORTFOLIO = {
       '</details>';
     }).join('');
 
-    const edu = D.education.map(e =>
-      '<li><span class="d">' + tx(e.period) + '</span><span><strong>' + tx(e.name) + '</strong>' + (e.detail ? '<span class="o">' + tx(e.detail) + '</span>' : '') + '</span></li>').join('');
-    const cert = D.certificates.map(c =>
-      '<li><span class="d">' + tx(c.date) + '</span><span><strong>' + tx(c.name) + '</strong><span class="o">' + tx(c.org) + '</span></span></li>').join('');
+    // 오른쪽 열 한 줄: 기간 | 이름 (+ 아래 회색 글씨)
+    const row = (d, name, gray) =>
+      '<li><span class="d">' + tx(d) + '</span><span><strong>' + tx(name) + '</strong>' + (gray ? '<span class="o">' + tx(gray) + '</span>' : '') + '</span></li>';
+    const block = (title, items) => (items && items.length)
+      ? '<div class="side-block"><p class="sub">' + title + '</p><ul class="rows">' + items.join('') + '</ul></div>' : '';
+    const edu    = (D.education    || []).map(e => row(e.period, e.name, e.detail));
+    const intern = (D.internships  || []).map(e => row(e.period, e.name, e.detail));
+    const cert   = (D.certificates || []).map(c => row(c.date, c.name, c.org));
 
     $('#activity-body').innerHTML =
       '<div><p class="sub">Experience</p><div class="exp-list">' + exp + '</div></div>' +
-      '<div><div class="side-block"><p class="sub">Education</p><ul class="rows">' + edu + '</ul></div>' +
-      '<div class="side-block"><p class="sub">Certificate</p><ul class="rows">' + cert + '</ul></div></div>';
+      '<div>' + block('Education', edu) + block('Internship', intern) + block('Certificate', cert) + '</div>';
   })();
 
   /* ── 연락처 ── */
   (function renderContact() {
     const p = D.profile, c = D.contact;
     const rows = [{ label: 'MAIL', value: p.email, url: 'mailto:' + p.email }].concat(c.items).map(it => {
-      const v = (it.url && !isTodo(it.value)) ? '<a href="' + esc(it.url) + '" target="_blank" rel="noopener">' + esc(it.value) + '</a>' : tx(it.value);
+      const ext = /^https?:/i.test(it.url || '');   // 웹 주소만 새 탭으로 열고, mailto:/tel: 은 그대로
+      const v = (it.url && !isTodo(it.value))
+        ? '<a href="' + esc(it.url) + '"' + (ext ? ' target="_blank" rel="noopener"' : '') + '>' + esc(it.value) + '</a>'
+        : tx(it.value);
       return '<div><dt>' + esc(it.label) + '</dt><dd>' + v + '</dd></div>';
     }).join('');
     $('#contact-body').innerHTML =
